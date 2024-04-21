@@ -33,8 +33,7 @@ const removeCity = (cityName) => {
             <div class="flex items-center justify-center gap-2">
                 <i class="fa-solid fa-clock"></i>
                 <h1 class="text-3xl">{{ new Date(city.location.localtime).getHours() }}:{{ new
-        Date(city.location.localtime).getMinutes() }}
-                </h1>
+        Date(city.location.localtime).getMinutes().toString().padStart(2, '0') }} </h1>
             </div>
         </div>
 

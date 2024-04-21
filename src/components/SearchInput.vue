@@ -1,6 +1,6 @@
 <script setup>
-import { reactive } from 'vue';
-import { defineEmits } from 'vue';
+import { reactive } from 'vue'
+import { defineEmits } from 'vue'
 
 const emit = defineEmits('city-data')
 
@@ -14,7 +14,7 @@ const handleSearch = () => {
     clearTimeout(searchTerm.timeout)
     searchTerm.timeout = setTimeout(async () => {
         if (searchTerm.query !== '') {
-            const res = await fetch(`http://api.weatherapi.com/v1/search.json?key=4e48c40e4d7d4d30ae6125240240804&q=${searchTerm.query}`)
+            const res = await fetch(`http://api.weatherapi.com/v1/search.json?key=5cf6c1aac2d54e0eb8c171146242104&q=${searchTerm.query}`)
 
             const data = await res.json()
             searchTerm.results = data
@@ -25,7 +25,7 @@ const handleSearch = () => {
 }
 
 const getForecast = async (id) => {
-    const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=4e48c40e4d7d4d30ae6125240240804&q=id:${id}&days=3&aqi=no&alerts=no
+    const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=5cf6c1aac2d54e0eb8c171146242104&q=id:${id}&days=3&aqi=no&alerts=no
 `)
     const data = await res.json()
     emit('city-data', data)

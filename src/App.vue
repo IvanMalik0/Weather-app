@@ -12,7 +12,7 @@ const addCity = (data) => {
 
 const deleteCity = (name) => {
   if (confirm('Are you sure?')) {
-    cities.value.filter((p) => { p.location.name !== name })
+    cities.value = cities.value.filter((p) => p.location.name !== name)
   }
 }
 </script>
